@@ -1,0 +1,6 @@
+{
+    "C_Cpp.default.compileCommands": "${workspaceRoot}\\build\\compile_commands.json",
+    "cortex-debug.liveWatchRefreshRate": 250,
+    "cortex-debug.armToolchainPath": "${workspaceRoot}\\extern\\arm-gnu-toolchain-13.2\\bin",
+    "cortex-debug.openocdPath": "${workspaceRoot}\\extern\\openocd\\bin\\openocd.exe",
+}

@@ -1,8 +1,8 @@
-## 1.0.2 (2024-06-06)
+## 1.1.0 (2024-06-06)
 
-### Fix
+### Feat
 
-- Added missing .vscode folder
+- Added 02_button
 
 ## 1.0.1 (2024-06-06)
 

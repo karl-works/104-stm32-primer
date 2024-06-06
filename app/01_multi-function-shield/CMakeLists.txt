@@ -1,7 +1,7 @@
 #SPDX-License-Identifier: MIT 
 cmake_minimum_required(VERSION 3.28) 
  
-project(multi-function-shield C CXX ASM) 
+project(01_multi-function-shield C CXX ASM) 
  
 add_executable(${PROJECT_NAME} src/multi-function-shield.cpp) 
 target_compile_options(${PROJECT_NAME} PRIVATE -fno-exceptions) 

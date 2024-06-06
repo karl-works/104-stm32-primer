@@ -6,7 +6,7 @@ if(EXISTS "${LOC_PATH}")
     message(FATAL_ERROR "You cannot build in a source directory (or any directory with a CMakeLists.txt file). Please make a build subdirectory. Feel free to remove CMakeCache.txt and CMakeFiles.")
 endif()
 
-project(04_usart C CXX ASM)
+project(03_usart C CXX ASM)
 
 add_executable(${PROJECT_NAME} src/usart.cpp)
 target_compile_options(${PROJECT_NAME} PUBLIC -fno-exceptions)

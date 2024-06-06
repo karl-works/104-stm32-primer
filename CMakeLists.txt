@@ -39,6 +39,14 @@ set(STM32_CUBE_G0_PATH
   
 set(CMAKE_TOOLCHAIN_FILE ${stm32_cmake_SOURCE_DIR}/cmake/stm32_gcc.cmake)  
  
+FetchContent_Declare(
+  etl
+  GIT_REPOSITORY https://github.com/ETLCPP/etl.git
+  GIT_TAG 20.38.13
+)
+
+FetchContent_MakeAvailable(etl)
+
 project(kw-stm-primer ASM C CXX)  
 find_package(  
   CMSIS  
@@ -48,7 +56,7 @@ find_package(
   
 find_package(  
   HAL  
-  COMPONENTS STM32G0 LL_RCC LL_GPIO   
+  COMPONENTS STM32G0 LL_RCC LL_GPIO LL_USART 
   REQUIRED  
 )  
  
@@ -57,6 +65,9 @@ add_subdirectory(app/01_blinky_kw)
 
 add_subdirectory(app/02_button)
 add_subdirectory(app/02_button_kw)
+
+add_subdirectory(app/03_usart)
+add_subdirectory(app/03_usart_kw)
 
 add_subdirectory(lib/kw-stm-g0)
 add_subdirectory(app/multi-function-shield)

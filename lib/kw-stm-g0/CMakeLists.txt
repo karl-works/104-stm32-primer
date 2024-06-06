@@ -28,4 +28,6 @@ target_link_libraries(
     CMSIS::STM32::G0B1RE 
     HAL::STM32::G0::LL_RCC  
     HAL::STM32::G0::LL_GPIO  
+    HAL::STM32::G0::LL_USART 
+    etl
 )

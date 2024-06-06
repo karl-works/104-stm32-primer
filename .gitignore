@@ -1,4 +1,4 @@
 build/
-extern/arm-gnu-toolchain-13
+extern/arm-gnu-toolchain-13.2
 extern/openocd
 extern/STM32CubeG0

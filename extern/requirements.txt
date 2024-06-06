@@ -1,0 +1,6 @@
+#SPDX-License-Identifier: MIT
+
+GitPython==3.1.24
+tqdm==4.66.2
+pre-commit==3.7.0
+commitizen=3.25.0

@@ -1,0 +1,58 @@
+#SPDX-License-Identifier: MIT  
+  
+cmake_minimum_required(VERSION 3.28)  
+ 
+  
+file(TO_CMAKE_PATH "${CMAKE_CURRENT_LIST_FILE}/CMakeLists.txt" LOC_PATH)  
+if(EXISTS "${LOC_PATH}")  
+  message(  
+    FATAL_ERROR  
+      "You cannot build in a source directory"   
+  )  
+endif()  
+  
+include(FetchContent)  
+  
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)  
+set(CMAKE_CXX_STANDARD 20)  
+  
+FetchContent_Declare(  
+  stm32_cmake  
+  GIT_REPOSITORY https://github.com/ObKo/stm32-cmake  
+  GIT_TAG master  
+)  
+  
+FetchContent_MakeAvailable(stm32_cmake)  
+  
+set(STM32_TOOLCHAIN_PATH  
+    ${CMAKE_CURRENT_SOURCE_DIR}/extern/arm-gnu-toolchain-13.2  
+    CACHE STRING "Path to the ARM toolchain"  
+)  
+set(STM32_TARGET_TRIPLET  
+    "arm-none-eabi"  
+    CACHE STRING "Target triplet for the ARM toolchain"  
+)  
+set(STM32_CUBE_G0_PATH  
+    ${CMAKE_CURRENT_SOURCE_DIR}/extern/STM32CubeG0  
+    CACHE STRING "Path to the STM32CubeG0 repository"  
+)  
+  
+set(CMAKE_TOOLCHAIN_FILE ${stm32_cmake_SOURCE_DIR}/cmake/stm32_gcc.cmake)  
+ 
+project(kw-stm-primer ASM C CXX)  
+find_package(  
+  CMSIS  
+  COMPONENTS STM32G0  
+  REQUIRED  
+)  
+  
+find_package(  
+  HAL  
+  COMPONENTS STM32G0 LL_RCC LL_GPIO   
+  REQUIRED  
+)  
+ 
+add_subdirectory(app/01_blinky)
+add_subdirectory(app/01_blinky_kw)
+add_subdirectory(lib/kw-stm-g0)
+add_subdirectory(app/multi-function-shield)

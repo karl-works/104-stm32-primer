@@ -4,6 +4,11 @@
 
 This repository was developed on Windows, and efforts have been made to ensure it is OS-independent. Larger scripts are written in Python, while smaller scripts have both PowerShell and Bash variants. Support for non-Windows environments is provided on a best-effort basis.
 
+## Branches
+
+- master: The code in this branch is in sync with released video content.
+- develop: The code in this branch may be ahead of the released video content. 
+  
 ## Building
 ```
 cd extern

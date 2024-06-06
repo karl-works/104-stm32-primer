@@ -54,5 +54,9 @@ find_package(
  
 add_subdirectory(app/01_blinky)
 add_subdirectory(app/01_blinky_kw)
+
+add_subdirectory(app/02_button)
+add_subdirectory(app/02_button_kw)
+
 add_subdirectory(lib/kw-stm-g0)
 add_subdirectory(app/multi-function-shield)

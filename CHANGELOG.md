@@ -1,3 +1,9 @@
+## 1.0.2 (2024-06-06)
+
+### Fix
+
+- Added missing .vscode folder
+
 ## 1.0.1 (2024-06-06)
 
 ### Fix

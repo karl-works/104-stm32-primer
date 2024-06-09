@@ -56,7 +56,7 @@ find_package(
   
 find_package(  
   HAL  
-  COMPONENTS STM32G0 LL_RCC LL_GPIO LL_USART 
+  COMPONENTS STM32G0 LL_RCC LL_GPIO LL_USART LL_EXTI
   REQUIRED  
 )  
  
@@ -65,10 +65,14 @@ add_subdirectory(app/01_blinky_kw)
 add_subdirectory(app/01_multi-function-shield)
 
 add_subdirectory(app/02_button)
+add_subdirectory(app/02_button_it)
 add_subdirectory(app/02_button_kw)
 add_subdirectory(app/02_multi-function-shield)
 
 add_subdirectory(app/03_usart)
 add_subdirectory(app/03_usart_kw)
 
+add_subdirectory(app/04_bitbang_spi_mfc)
+
 add_subdirectory(lib/kw-stm-g0)
+add_subdirectory(lib/kw)

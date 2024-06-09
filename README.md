@@ -23,10 +23,9 @@ Please note that there may be changes in later episodes that nessesitate changes
 |Number|Status|Video|
 |---|---|---|
 |01|Released|[STM Primer - S01E01 - Adventures in the Art of Blinking](https://youtu.be/0vRnZDV55ms)|
-|02|In Production|STM Primer - S01E02 - The Subtlie Art of Button Pressing|
-|03|Concept|STM Primer - S01E03 - On the USART no one can hear your send|
-|04|Concept|STM Primer - S01E04 - Banging on Heavens door|
-
+|02|Recording|STM Primer - S01E02 - The Subtlie Art of Button Pressing|
+|03|Recording|STM Primer - S01E03 - On the USART no one can hear your send|
+|04|Development|STM Primer - S01E04 - Banging on Heavens door|
 
   
 ## Building

@@ -47,6 +47,27 @@
             ]
         },
         {
+            "name": "Debug 02_button_it",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/app/02_button_it/02_button_it.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "interface": "swd",
+            "device": "st_nucleo_g0.cfg",
+            "configFiles": [
+                "board/st_nucleo_g0.cfg"
+            ],
+            "preLaunchCommands": [
+                "set mem inaccessible-by-default off",
+                "monitor reset"
+            ],
+            "postLaunchCommands": [
+                "monitor reset init",
+                "monitor sleep 200"
+            ]
+        },
+        {
             "name": "Debug 04_usart",
             "cwd": "${workspaceRoot}",
             "executable": "${workspaceRoot}/build/app/03_usart/04_usart.elf",
@@ -88,27 +109,7 @@
                 "monitor sleep 200"
             ]
         },
-        {
-            "name": "Debug internal_dd_blinky",
-            "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/app/internal_dd_blinky/internal_dd_blinky.elf",
-            "request": "launch",
-            "type": "cortex-debug",
-            "servertype": "openocd",
-            "interface": "swd",
-            "device": "st_nucleo_g0.cfg",
-            "configFiles": [
-                "board/st_nucleo_g0.cfg"
-            ],
-            "preLaunchCommands": [
-                "set mem inaccessible-by-default off",
-                "monitor reset"
-            ],
-            "postLaunchCommands": [
-                "monitor reset init",
-                "monitor sleep 200"
-            ]
-        },
+        
        
       
     ]

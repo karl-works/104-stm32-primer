@@ -3,4 +3,7 @@
     "cortex-debug.liveWatchRefreshRate": 250,
     "cortex-debug.armToolchainPath": "${workspaceRoot}\\extern\\arm-gnu-toolchain-13.2\\bin",
     "cortex-debug.openocdPath": "${workspaceRoot}\\extern\\openocd\\bin\\openocd.exe",
+    "files.associations": {
+        "cstdint": "cpp"
+    },
 }

@@ -1,4 +1,24 @@
-# Intro
+# Readme
+
+## Applications
+
+|Name|Description|
+|---|---|
+|01_blinky|Blinking LED useing the LL library|
+|01_blinky_kw|Blinking LED using the kw library|
+|01_multi-function-shield|Blinking LED on the multi-function shield useing the kw library|
+|02_button|Detecting button  press using the LL library|
+|02_button_it|Detecting button press using the LL library with interrupts|
+|02_button_kw|Detecting button  press using the kw library|
+|02_button_kw_it|Detecting button  press using the kw library with interrupts|
+|02_multi-function-shield|Detecting button  press on the multi-function shield using the kw library|
+|02_multi-function-shield_it|Detecting button  press on the multi-function shield using the kw library with interrupts|
+|02_multi-function-shield_it_poll|Detecting button  press on the multi-function shield using the kw library with polling in interrupts|
+|03_usart|USART communication using the LL library|
+|03_usart_kw|USART communication using the kw library|
+
+
+
 
 ## Environment
 

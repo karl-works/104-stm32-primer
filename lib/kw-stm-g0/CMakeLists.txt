@@ -6,6 +6,8 @@ add_library(kw::stm::g0 ALIAS ${PROJECT_NAME})
  
 set(PUBLIC_HEADERS  
   include/kw-stm-g0/drivers/pin.h 
+  include/kw-stm-g0/drivers/pin_exti.h 
+  
 ) 
  
 target_sources( 

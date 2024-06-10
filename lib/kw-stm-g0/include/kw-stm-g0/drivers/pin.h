@@ -5,38 +5,18 @@
 #include <stm32g0xx_ll_bus.h>
 #include <stm32g0xx_ll_gpio.h>
 
-
 namespace kw::stm::g0::drivers
 {
-
-template <uint64_t GPIOX_BASE_N> struct PinConfig
-{
-};
-
-template <> struct PinConfig<GPIOA_BASE>
-{
-    static constexpr auto LL_IOP_GRP1_PERIPH_GROUP = LL_IOP_GRP1_PERIPH_GPIOA;
-};
-
-template <> struct PinConfig<GPIOB_BASE>
-{
-    static constexpr auto LL_IOP_GRP1_PERIPH_GROUP = LL_IOP_GRP1_PERIPH_GPIOB;
-};
-
-template <> struct PinConfig<GPIOC_BASE>
-{
-    static constexpr auto LL_IOP_GRP1_PERIPH_GROUP = LL_IOP_GRP1_PERIPH_GPIOC;
-};
 
 template <uint64_t GPIOX_BASE_N, uint64_t GPIO_LL_EC_PIN_N, uint64_t GPIO_LL_EC_MODE_N, uint64_t GPIO_LL_EC_SPEED_N,
           uint64_t GPIO_LL_EC_OUTPUT_N, uint64_t GPIO_LL_EC_PULL_N>
 struct Pin
 {
 
-    using CONFIG_T = PinConfig<GPIOX_BASE_N>;
     void Init()
     {
-        LL_IOP_GRP1_EnableClock(CONFIG_T::LL_IOP_GRP1_PERIPH_GROUP);
+
+        EnableClock();
         LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
         GPIO_InitStruct.Pin = GPIO_LL_EC_PIN_N;
         GPIO_InitStruct.Mode = GPIO_LL_EC_MODE_N;
@@ -46,6 +26,27 @@ struct Pin
         GPIO_InitStruct.Alternate = LL_GPIO_AF_0;
         LL_GPIO_Init(reinterpret_cast<GPIO_TypeDef *>(GPIOX_BASE_N), &GPIO_InitStruct);
     }
+    
+    void EnableClock()
+    {
+        if constexpr (GPIOX_BASE_N == GPIOA_BASE)
+        {
+            LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOA);
+        }
+        else if constexpr (GPIOX_BASE_N == GPIOB_BASE)
+        {
+            LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOB);
+        }
+        else if constexpr (GPIOX_BASE_N == GPIOC_BASE)
+        {
+            LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOC);
+        }
+        else
+        {
+            static_assert(false, "LL_IOP_GRP1_EnableClock not defiend for value of GPIOX_BASE_N");
+        }
+    }
+
     void Set()
     {
         LL_GPIO_SetOutputPin(reinterpret_cast<GPIO_TypeDef *>(GPIOX_BASE_N), GPIO_LL_EC_PIN_N);

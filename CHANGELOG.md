@@ -1,3 +1,13 @@
+## 2.1.0 (2024-06-10)
+
+### Feat
+
+- Added EXTI
+
+### Fix
+
+- Moved to if constexpr, got rid of the template specializations
+
 ## 2.0.0 (2024-06-10)
 
 ### BREAKING CHANGE
